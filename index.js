@@ -1,7 +1,8 @@
+import 'dotenv/config'
 import express from "express"
 
 const app = express()
-const port = 3000
+const port = process.env.PORT || 3000
 app.use(express.json())
 
 let teaData = []
@@ -55,5 +56,5 @@ app.delete("/tea/:id", (req, res) => {
 })
 
 app.listen(port, () => {
-    console.log(`Server is listening on port: ${port}...`)
+    console.log(`Server is running at port: ${port}...`)
 })
